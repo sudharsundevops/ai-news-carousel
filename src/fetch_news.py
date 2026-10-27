@@ -81,6 +81,52 @@ def fetch_hn(since_ts: float) -> list[dict]:
     return items
 
 
+def fetch_topic(topic: str, days: int = 2, limit: int = 25) -> list[dict]:
+    """Latest coverage of one topic, for breaking posts: Google News search plus Hacker News."""
+    since = time.time() - days * 86400
+    items = []
+    try:
+        resp = requests.get("https://news.google.com/rss/search", headers=UA, timeout=20,
+                            params={"q": f"{topic} when:{days}d", "hl": "en-IN", "gl": "IN", "ceid": "IN:en"})
+        resp.raise_for_status()
+        for e in feedparser.parse(resp.content).entries:
+            parsed = e.get("published_parsed")
+            ts = timegm(parsed) if parsed else time.time()
+            if ts < since:
+                continue
+            # Google News titles end with " - Publisher"; keep the publisher as the source.
+            title, _, publisher = _clean(e.get("title", ""), 240).rpartition(" - ")
+            items.append({"source": publisher or "Google News", "title": title or e.get("title", ""),
+                          "summary": _clean(e.get("summary", "")), "url": e.get("link", ""),
+                          "ts": ts, "points": 0})
+    except Exception as e:  # noqa: BLE001
+        print(f"[topic] Google News skipped: {e}")
+    try:
+        resp = requests.get("https://hn.algolia.com/api/v1/search_by_date", headers=UA, timeout=20,
+                            params={"query": topic, "tags": "story", "hitsPerPage": 15,
+                                    "numericFilters": f"created_at_i>{int(since)}"})
+        resp.raise_for_status()
+        for h in resp.json().get("hits", []):
+            url = h.get("url") or f"https://news.ycombinator.com/item?id={h['objectID']}"
+            items.append({"source": "Hacker News", "title": _clean(h.get("title") or "", 200),
+                          "summary": "", "url": url, "ts": h.get("created_at_i", 0),
+                          "points": h.get("points", 0)})
+    except Exception as e:  # noqa: BLE001
+        print(f"[topic] Hacker News skipped: {e}")
+
+    seen, out = set(), []
+    for it in sorted(items, key=lambda x: -x["ts"]):
+        key = _norm_title(it["title"])
+        if key and key not in seen:
+            seen.add(key)
+            out.append(it)
+    out = out[:limit]
+    for i, it in enumerate(out):
+        it["id"] = i
+    print(f"[topic] {len(out)} items for '{topic}'")
+    return out
+
+
 def fetch_all(used_urls: set[str]) -> list[dict]:
     since = time.time() - config.LOOKBACK_HOURS * 3600
     raw = fetch_rss(since) + fetch_hn(since)

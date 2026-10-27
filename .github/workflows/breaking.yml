@@ -1,0 +1,63 @@
+name: Breaking news post
+
+# Started by the Telegram relay (worker/) when you send /breaking to the bot,
+# or by hand from the Actions tab with the "Run workflow" button.
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "What the post is about, e.g. OpenAI GPT-6 launch"
+        required: true
+      notes:
+        description: "Your angle or facts to include (optional)"
+        required: false
+        default: ""
+      slides:
+        description: "Story slides after the cover"
+        required: false
+        default: "2"
+        type: choice
+        options: ["1", "2", "3"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # Pinned: ubuntu-latest is Ubuntu 26.04, which Playwright 1.56 can't install Chromium on.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Build breaking post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IG_HANDLE: ${{ vars.IG_HANDLE }}
+          # Inputs go through env vars, never straight into the shell line, so text from
+          # Telegram can't run as a command.
+          TOPIC: ${{ inputs.topic }}
+          NOTES: ${{ inputs.notes }}
+          SLIDES: ${{ inputs.slides }}
+        run: python main.py --breaking "$TOPIC" --notes "$NOTES" --slides "$SLIDES"
+
+      - name: Keep slides as a downloadable artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: breaking-${{ github.run_number }}
+          path: output/
+          retention-days: 7
+          if-no-files-found: ignore

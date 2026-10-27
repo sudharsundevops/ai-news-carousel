@@ -36,10 +36,10 @@ def send_slides(paths: list[Path], caption_path: Path) -> None:
     print(f"[telegram] sent {len(paths)} slides + caption")
 
 
-def notify_failure(error: str) -> None:
+def notify_failure(error: str, what: str = "Today's AI carousel") -> None:
     if os.environ.get("TELEGRAM_BOT_TOKEN") and os.environ.get("TELEGRAM_CHAT_ID"):
         try:
-            send_message(f"Today's AI carousel failed:\n{error[:1500]}\n\n"
-                         "Check the GitHub Actions log, or make today's post manually.")
+            send_message(f"{what} failed:\n{error[:1500]}\n\n"
+                         "Check the GitHub Actions log, or make the post manually.")
         except Exception as e:  # noqa: BLE001
             print(f"[telegram] could not send failure notice: {e}")

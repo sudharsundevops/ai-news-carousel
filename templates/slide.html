@@ -106,14 +106,18 @@
 
 {% if kind == "cover" %}
 <section class="slide cover">
-  <div class="ears"><span>Morning edition</span>{{ emblem }}<i>All the AI news,<br>before your chai</i></div>
+  <div class="ears"><span>{{ "Special edition" if breaking else "Morning edition" }}</span>{{ emblem }}<i>All the AI news,<br>before your chai</i></div>
   <div class="double-rule"></div>
   <h1 class="nameplate">The <span class="ai">AI</span> Chronicle</h1>
   <div class="rule"></div>
-  <div class="edition"><span>No. {{ edition }}</span><span>{{ date_label }}</span><span>Free</span></div>
-  <div class="lead-label">Today’s lead</div>
+  <div class="edition"><span>{{ "Breaking" if breaking else "No. " ~ edition }}</span><span>{{ date_label }}</span><span>Free</span></div>
+  <div class="lead-label">{{ "Breaking news" if breaking else "Today’s lead" }}</div>
   <div class="hook fit">{{ hook }}</div>
+  {% if breaking %}
+  <p class="inside">What we know so far, in {{ count }} {{ "page" if count == 1 else "pages" }}.</p>
+  {% else %}
   <p class="inside">Plus {{ count - 1 }} more stories from yesterday, each explained in under a minute.</p>
+  {% endif %}
   <div class="foot">
     <span class="swipe">Swipe to read the paper</span>
     <span>{{ handle }}</span>

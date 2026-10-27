@@ -44,9 +44,27 @@ FORMAT = """Return JSON only, in exactly this shape:
 """
 
 
-def _call(model: str, prompt: str, key: str) -> dict:
+BREAKING_FORMAT = """Return JSON only, in exactly this shape:
+{
+  "cover_hook": "max 8 words, the news itself as a hook",
+  "stories": [
+    {
+      "id": <id of the candidate item this slide is based on, as integer>,
+      "tag": "a short angle label, max 2 words, like: What happened, Why now, What changes",
+      "headline": "max 9 words",
+      "summary": "max 28 words, 1-2 sentences",
+      "why": "why it matters to the audience, max 16 words"
+    }
+  ],
+  "caption_hook": "one line to open the caption, max 15 words",
+  "hashtags": ["6 to 10 relevant hashtags without spaces"]
+}
+"""
+
+
+def _call(model: str, prompt: str, key: str, system: str = SYSTEM) -> dict:
     body = {
-        "systemInstruction": {"parts": [{"text": SYSTEM}]},
+        "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
         "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4},
     }
@@ -66,7 +84,7 @@ def _call(model: str, prompt: str, key: str) -> dict:
     raise RuntimeError("unreachable")
 
 
-def _validate(data: dict, items: list[dict], top_n: int) -> dict:
+def _validate(data: dict, items: list[dict], top_n: int, minimum: int = 3, allow_repeat: bool = False) -> dict:
     by_id = {it["id"]: it for it in items}
     stories, used = [], set()
     for s in data.get("stories", []):
@@ -74,7 +92,7 @@ def _validate(data: dict, items: list[dict], top_n: int) -> dict:
             sid = int(s["id"])
         except (KeyError, TypeError, ValueError):
             continue
-        if sid not in by_id or sid in used:
+        if sid not in by_id or (sid in used and not allow_repeat):
             continue
         used.add(sid)
         src = by_id[sid]
@@ -88,7 +106,7 @@ def _validate(data: dict, items: list[dict], top_n: int) -> dict:
         })
         if len(stories) == top_n:
             break
-    if len(stories) < 3:
+    if len(stories) < minimum:
         raise RuntimeError(f"Only {len(stories)} usable stories came back")
     data["stories"] = stories
     data["hashtags"] = [h.lstrip("#").replace(" ", "") for h in data.get("hashtags", [])][:12]
@@ -109,6 +127,34 @@ def curate(items: list[dict], top_n: int = config.TOP_N) -> dict:
     for model in (config.GEMINI_MODEL, config.GEMINI_FALLBACK_MODEL):
         try:
             return _validate(_call(model, prompt, key), items, top_n)
+        except Exception as e:  # noqa: BLE001
+            print(f"[gemini] {model}: {e}")
+            last = e
+    raise RuntimeError(f"All Gemini models failed: {last}")
+
+
+def curate_breaking(items: list[dict], topic: str, notes: str = "", slides: int = 2) -> dict:
+    """Write a short breaking-news post about one topic, steered by the editor's notes."""
+    key = os.environ.get("GEMINI_API_KEY")
+    if not key:
+        raise RuntimeError("GEMINI_API_KEY is not set")
+    if not items:
+        raise RuntimeError(f"No recent news found for '{topic}'. Try different words.")
+
+    system = SYSTEM + """
+This is a breaking-news post about a single topic, not the daily roundup.
+- Every slide covers the same story from a different angle, so slides must not repeat each other.
+- The editor's notes set the angle and emphasis. Facts stated in the notes come from the editor and may be used.
+- If candidate items disagree, say what is confirmed and what is reported.
+"""
+    lines = [f"[{it['id']}] ({it['source']}) {it['title']} :: {it['summary']}" for it in items]
+    prompt = (f"Topic: {topic}\nEditor's notes: {notes or '(none)'}\n\n"
+              f"Write exactly {slides} slides about this topic from these candidates.\n\n"
+              + "\n".join(lines) + "\n\n" + BREAKING_FORMAT)
+
+    for model in (config.GEMINI_MODEL, config.GEMINI_FALLBACK_MODEL):
+        try:
+            return _validate(_call(model, prompt, key, system), items, slides, minimum=1, allow_repeat=True)
         except Exception as e:  # noqa: BLE001
             print(f"[gemini] {model}: {e}")
             last = e

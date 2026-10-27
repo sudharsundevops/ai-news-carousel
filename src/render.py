@@ -16,21 +16,23 @@ def news_date() -> datetime:
     return datetime.now(IST) - timedelta(days=1)
 
 
-def render_slides(data: dict, out_dir: Path) -> list[Path]:
+def render_slides(data: dict, out_dir: Path, breaking: bool = False) -> list[Path]:
+    """Daily edition: cover, stories, back page. Breaking: cover and stories only, dated today."""
     env = Environment(loader=FileSystemLoader(ROOT / "templates"),
                       autoescape=select_autoescape(["html"]))
     tpl = env.get_template("slide.html")
     stories = data["stories"]
     n = len(stories)
-    d = news_date()
+    d = datetime.now(IST) if breaking else news_date()
     today = datetime.now(IST).date()
     edition = max(1, (today - datetime.fromisoformat(config.LAUNCH_DATE).date()).days + 1)
-    common = {"handle": config.HANDLE, "count": n, "edition": edition,
+    common = {"handle": config.HANDLE, "count": n, "edition": edition, "breaking": breaking,
               "date_label": f"{d.strftime('%A')}, {d.day} {d.strftime('%B %Y')}"}
 
     pages = [tpl.render(kind="cover", hook=data.get("cover_hook", stories[0]["headline"]), **common)]
     pages += [tpl.render(kind="story", s=s, rank=i, **common) for i, s in enumerate(stories, 1)]
-    pages.append(tpl.render(kind="outro", **common))
+    if not breaking:
+        pages.append(tpl.render(kind="outro", **common))
 
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = []
@@ -56,7 +58,7 @@ def write_caption(data: dict, out_dir: Path) -> Path:
     lines += ["", "Sources:"]
     for i, s in enumerate(data["stories"], 1):
         lines.append(f"{i}. {s['source']}: {s['url']}")
-    lines += ["", f"Follow {config.HANDLE} for a daily AI briefing.", ""]
+    lines += ["", f"Follow {config.HANDLE} for a daily AI briefing and breaking AI news.", ""]
     lines.append(" ".join(f"#{h}" for h in data.get("hashtags", [])))
     text = "\n".join(lines)
     if len(text) > 2200:  # Instagram's caption limit: drop URLs, keep source names

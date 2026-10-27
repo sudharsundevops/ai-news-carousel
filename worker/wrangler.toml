@@ -1,0 +1,7 @@
+name = "ai-chronicle-relay"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+GH_REPO = "sudharsundevops/ai-news-carousel"
+WORKFLOW = "breaking.yml"
