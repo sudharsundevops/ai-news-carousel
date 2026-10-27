@@ -59,7 +59,11 @@
   .story .runner .page { font-family: var(--sans); font-size: 22px; color: var(--faded); }
   .story .section { margin-top: 64px; font-style: italic; font-size: 28px; color: var(--indigo); }
   .story .headline { font-weight: 800; font-size: 72px; line-height: 1.08; letter-spacing: -0.018em; margin-top: 12px; max-height: 240px; overflow: hidden; text-wrap: balance; }
-  .story .summary { font-size: 34px; line-height: 1.55; margin-top: 40px; max-width: 860px; max-height: 270px; overflow: hidden; }
+  .story .summary { font-size: 34px; line-height: 1.5; margin-top: 36px; max-width: 860px; max-height: 260px; overflow: hidden; }
+  .story .facts { list-style: none; margin-top: 28px; max-width: 860px; max-height: 200px; overflow: hidden; font-size: 30px; line-height: 1.4; }
+  .story .facts li { position: relative; padding-left: 34px; }
+  .story .facts li + li { margin-top: .4em; }
+  .story .facts li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 14px; height: 3px; background: var(--indigo); }
   .story .summary::first-letter {
     font-weight: 800; float: left; font-size: 2.85em; line-height: .9;
     padding: .06em .1em 0 0; color: var(--indigo);
@@ -108,6 +112,9 @@
   <div class="section">{{ s.tag }}</div>
   <h2 class="headline fit">{{ s.headline }}</h2>
   <p class="summary fit">{{ s.summary }}</p>
+  {% if s.facts %}
+  <ul class="facts fit">{% for f in s.facts %}<li>{{ f }}</li>{% endfor %}</ul>
+  {% endif %}
   <div class="note">
     <div class="note-label">Why it matters</div>
     <div class="note-text fit">{{ s.why }}</div>

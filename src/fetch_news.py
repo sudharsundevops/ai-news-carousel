@@ -46,7 +46,7 @@ def fetch_rss(since_ts: float) -> list[dict]:
             if ts < since_ts:
                 continue
             title = _clean(e.get("title", ""), 200)
-            summary = _clean(e.get("summary", ""))
+            summary = _clean(e.get("summary", ""), 900)
             if source not in config.AI_ONLY_SOURCES and not _is_ai(f"{title} {summary}"):
                 continue
             items.append({"source": source, "title": title, "summary": summary,
@@ -97,7 +97,7 @@ def fetch_topic(topic: str, days: int = 2, limit: int = 25) -> list[dict]:
             # Google News titles end with " - Publisher"; keep the publisher as the source.
             title, _, publisher = _clean(e.get("title", ""), 240).rpartition(" - ")
             items.append({"source": publisher or "Google News", "title": title or e.get("title", ""),
-                          "summary": _clean(e.get("summary", "")), "url": e.get("link", ""),
+                          "summary": _clean(e.get("summary", ""), 900), "url": e.get("link", ""),
                           "ts": ts, "points": 0})
     except Exception as e:  # noqa: BLE001
         print(f"[topic] Google News skipped: {e}")

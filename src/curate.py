@@ -19,6 +19,8 @@ Audience: {config.AUDIENCE}
 Rules:
 - Use ONLY facts present in the candidate items. Never add numbers, dates, prices or names that aren't there.
 - If an item is vague, skip it rather than guess.
+- Facts add something the summary doesn't say; never restate it. If the item has no extra facts, return fewer, even an empty list; never invent one.
+- Write headlines and the cover hook in sentence case, like a news site: capitalise only the first word and names.
 - Write in your own words. Never copy sentences from the items.
 - Plain English, no hype words (revolutionary, game-changer, insane, mind-blowing).
 - Prefer launches, releases, policy changes and things people can try, over opinion pieces.
@@ -34,7 +36,8 @@ FORMAT = """Return JSON only, in exactly this shape:
       "id": <candidate id as integer>,
       "tag": "one of: Launch, Model, Research, Tool, Funding, Policy, Business, Open source",
       "headline": "max 9 words",
-      "summary": "what happened, max 28 words, 1-2 sentences",
+      "summary": "what happened, 30 to 45 words, 2-3 sentences",
+      "facts": ["2 or 3 key facts from the item (numbers, who, when, availability), max 12 words each"],
       "why": "why it matters to the audience, max 16 words"
     }
   ],
@@ -52,7 +55,8 @@ BREAKING_FORMAT = """Return JSON only, in exactly this shape:
       "id": <id of the candidate item this slide is based on, as integer>,
       "tag": "a short angle label, max 2 words, like: What happened, Why now, What changes",
       "headline": "max 9 words",
-      "summary": "max 28 words, 1-2 sentences",
+      "summary": "30 to 45 words, 2-3 sentences",
+      "facts": ["2 or 3 key facts from the items (numbers, who, when, availability), max 12 words each"],
       "why": "why it matters to the audience, max 16 words"
     }
   ],
@@ -62,11 +66,31 @@ BREAKING_FORMAT = """Return JSON only, in exactly this shape:
 """
 
 
+# Gemini fills this exact shape, so a long answer can't come back as broken JSON.
+_STR = {"type": "STRING"}
+SCHEMA = {
+    "type": "OBJECT",
+    "properties": {
+        "cover_hook": _STR,
+        "stories": {"type": "ARRAY", "items": {
+            "type": "OBJECT",
+            "properties": {"id": {"type": "INTEGER"}, "tag": _STR, "headline": _STR, "summary": _STR,
+                           "facts": {"type": "ARRAY", "items": _STR}, "why": _STR},
+            "required": ["id", "tag", "headline", "summary", "facts", "why"],
+        }},
+        "caption_hook": _STR,
+        "hashtags": {"type": "ARRAY", "items": _STR},
+    },
+    "required": ["cover_hook", "stories", "caption_hook", "hashtags"],
+}
+
+
 def _call(model: str, prompt: str, key: str, system: str = SYSTEM, timeout: int = 120) -> dict:
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
-        "generationConfig": {"responseMimeType": "application/json", "temperature": 0.4},
+        "generationConfig": {"responseMimeType": "application/json", "responseSchema": SCHEMA,
+                             "temperature": 0.4, "maxOutputTokens": 8192},
     }
     delay = 15
     for attempt in range(1, 5):
@@ -100,6 +124,7 @@ def _validate(data: dict, items: list[dict], top_n: int, minimum: int = 3, allow
             "tag": str(s.get("tag", "News"))[:20],
             "headline": str(s.get("headline", "")).strip(),
             "summary": str(s.get("summary", "")).strip(),
+            "facts": [str(f).strip() for f in (s.get("facts") or []) if str(f).strip()][:3],
             "why": str(s.get("why", "")).strip(),
             "source": src["source"],
             "url": src["url"],
