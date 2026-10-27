@@ -1,0 +1,58 @@
+name: Daily AI carousel
+
+on:
+  schedule:
+    # 01:17 UTC = 06:47 IST. Off the top of the hour because GitHub delays busy slots.
+    - cron: "17 1 * * *"
+  workflow_dispatch: {}   # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write   # lets the job commit data/history.json (no repeat stories)
+
+concurrency:
+  group: daily-carousel
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Build carousel
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          IG_HANDLE: ${{ vars.IG_HANDLE }}
+          TOP_N: ${{ vars.TOP_N || '10' }}
+        run: python main.py
+
+      - name: Keep slides as a downloadable artifact (backup to Telegram)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: carousel-${{ github.run_number }}
+          path: output/
+          retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Save story history
+        if: success()
+        run: |
+          git config user.name "carousel-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/history.json
+          git diff --cached --quiet || git commit -m "history: $(date -u +%F)"
+          git push
