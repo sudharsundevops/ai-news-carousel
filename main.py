@@ -7,6 +7,7 @@ Usage:
   python main.py --breaking "topic" [--notes "angle"]   2-3 slides on one topic, right now
 """
 import argparse
+from datetime import datetime
 import json
 import os
 import sys
@@ -86,7 +87,10 @@ def run_breaking(args) -> None:
 def run(args) -> None:
     if args.breaking:
         return run_breaking(args)
-    day = news_date().strftime("%Y-%m-%d")
+    news_day = news_date()
+    if args.date:   # cover exactly one IST calendar day
+        news_day = datetime.fromisoformat(args.date).replace(tzinfo=IST)
+    day = news_day.strftime("%Y-%m-%d")
     out_dir = ROOT / "output" / day
     if not args.sample and not args.force and LAST_EDITION.exists() and LAST_EDITION.read_text().strip() == day:
         print(f"[skip] the {day} edition was already sent; use --force to send it again")
@@ -100,10 +104,14 @@ def run(args) -> None:
         from src.fetch_news import fetch_all
         hist = load_history()
         covered = load_covered()
-        items = fetch_all(set(hist))
+        if args.date:
+            start = news_day.timestamp()
+            items = fetch_all(set(hist), since=start, until=start + 86400)
+        else:
+            items = fetch_all(set(hist))
         data = curate(items, recent=[c["headline"] for c in covered])
 
-    paths = render_slides(data, out_dir)
+    paths = render_slides(data, out_dir, day=news_day)
     caption = write_caption(data, out_dir)
     (out_dir / "stories.json").write_text(json.dumps(data, indent=2, ensure_ascii=False))
 
@@ -125,6 +133,7 @@ if __name__ == "__main__":
     ap.add_argument("--sample", action="store_true", help="render sample data, no APIs")
     ap.add_argument("--no-send", action="store_true", help="skip Telegram")
     ap.add_argument("--force", action="store_true", help="send today's edition even if it was already sent")
+    ap.add_argument("--date", metavar="YYYY-MM-DD", help="make the edition for one past day (IST), using only news from that day")
     ap.add_argument("--breaking", metavar="TOPIC", help="make a short breaking-news post on one topic")
     ap.add_argument("--notes", default="", help="your angle or facts for the breaking post")
     ap.add_argument("--slides", type=int, default=2, choices=[1, 2, 3], help="story slides after the cover")

@@ -27,7 +27,7 @@ def _is_ai(text: str) -> bool:
     return any(re.search(rf"\b{re.escape(k)}\b", t) for k in config.AI_KEYWORDS)
 
 
-def fetch_rss(since_ts: float) -> list[dict]:
+def fetch_rss(since_ts: float, until_ts: float = float("inf")) -> list[dict]:
     items = []
     for source, url in config.FEEDS.items():
         try:
@@ -43,7 +43,7 @@ def fetch_rss(since_ts: float) -> list[dict]:
             if not parsed:
                 continue
             ts = timegm(parsed)
-            if ts < since_ts:
+            if ts < since_ts or ts >= until_ts:
                 continue
             title = _clean(e.get("title", ""), 200)
             summary = _clean(e.get("summary", ""), 900)
@@ -56,14 +56,15 @@ def fetch_rss(since_ts: float) -> list[dict]:
     return items
 
 
-def fetch_hn(since_ts: float) -> list[dict]:
+def fetch_hn(since_ts: float, until_ts: float | None = None) -> list[dict]:
     items = []
     for q in config.HN_QUERIES:
         try:
             resp = requests.get(
                 "https://hn.algolia.com/api/v1/search",
                 params={"query": q, "tags": "story", "hitsPerPage": 30,
-                        "numericFilters": f"created_at_i>{int(since_ts)},points>{config.HN_MIN_POINTS}"},
+                        "numericFilters": f"created_at_i>{int(since_ts)},points>{config.HN_MIN_POINTS}"
+                                          + (f",created_at_i<{int(until_ts)}" if until_ts else "")},
                 headers=UA, timeout=20)
             resp.raise_for_status()
         except Exception as e:  # noqa: BLE001
@@ -127,9 +128,11 @@ def fetch_topic(topic: str, days: int = 2, limit: int = 25) -> list[dict]:
     return out
 
 
-def fetch_all(used_urls: set[str]) -> list[dict]:
-    since = time.time() - config.LOOKBACK_HOURS * 3600
-    raw = fetch_rss(since) + fetch_hn(since)
+def fetch_all(used_urls: set[str], since: float | None = None, until: float | None = None) -> list[dict]:
+    """Recent stories; pass since/until (unix seconds) to limit them to one window, e.g. a single day."""
+    if since is None:
+        since = time.time() - config.LOOKBACK_HOURS * 3600
+    raw = fetch_rss(since, until or float("inf")) + fetch_hn(since, until)
 
     seen_titles, seen_urls, out = set(), set(used_urls), []
     # Official/editorial sources first, then HN by points.

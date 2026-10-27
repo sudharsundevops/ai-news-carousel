@@ -16,16 +16,17 @@ def news_date() -> datetime:
     return datetime.now(IST) - timedelta(days=1)
 
 
-def render_slides(data: dict, out_dir: Path, breaking: bool = False) -> list[Path]:
+def render_slides(data: dict, out_dir: Path, breaking: bool = False, day: datetime | None = None) -> list[Path]:
     """Daily edition: cover, stories, back page. Breaking: cover and stories only, dated today."""
     env = Environment(loader=FileSystemLoader(ROOT / "templates"),
                       autoescape=select_autoescape(["html"]))
     tpl = env.get_template("slide.html")
     stories = data["stories"]
     n = len(stories)
-    d = datetime.now(IST) if breaking else news_date()
+    d = datetime.now(IST) if breaking else (day or news_date())
     today = datetime.now(IST).date()
-    edition = max(1, (today - datetime.fromisoformat(config.LAUNCH_DATE).date()).days + 1)
+    # Numbered by the news date covered, so a re-run of an old day keeps its number.
+    edition = max(1, (d.date() - datetime.fromisoformat(config.LAUNCH_DATE).date()).days + 1)
     common = {"handle": config.HANDLE, "count": n, "edition": edition, "breaking": breaking,
               "date_label": f"{d.strftime('%A')}, {d.day} {d.strftime('%B %Y')}"}
 
