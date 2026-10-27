@@ -138,7 +138,7 @@ def _validate(data: dict, items: list[dict], top_n: int, minimum: int = 3, allow
     return data
 
 
-def curate(items: list[dict], top_n: int = config.TOP_N) -> dict:
+def curate(items: list[dict], top_n: int = config.TOP_N, recent: list[str] | None = None) -> dict:
     key = os.environ.get("GEMINI_API_KEY")
     if not key:
         raise RuntimeError("GEMINI_API_KEY is not set")
@@ -146,7 +146,11 @@ def curate(items: list[dict], top_n: int = config.TOP_N) -> dict:
         raise RuntimeError(f"Only {len(items)} candidate items found; nothing to curate")
 
     lines = [f"[{it['id']}] ({it['source']}) {it['title']} :: {it['summary']}" for it in items]
-    prompt = (f"Pick the top {top_n} stories from these candidates.\n\n"
+    skip = ""
+    if recent:
+        skip = ("Already covered in recent editions. Skip these stories even when another outlet reports them, "
+                "unless there is a genuinely new development:\n" + "\n".join(f"- {h}" for h in recent) + "\n\n")
+    prompt = (f"Pick the top {top_n} stories from these candidates.\n\n" + skip
               + "\n".join(lines) + "\n\n" + FORMAT)
 
     for model in (config.GEMINI_MODEL, config.GEMINI_FALLBACK_MODEL):

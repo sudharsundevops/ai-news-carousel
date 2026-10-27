@@ -30,6 +30,11 @@ from src.deliver import notify_failure, send_slides  # noqa: E402
 from src.render import IST, news_date, render_slides, write_caption  # noqa: E402
 
 HISTORY = ROOT / "data" / "history.json"
+# The news date of the last edition sent, so a second run for the same day skips itself.
+LAST_EDITION = ROOT / "data" / "last_edition.txt"
+# Headlines from recent editions. Links alone miss the same story from another outlet.
+COVERED = ROOT / "data" / "covered.json"
+COVERED_DAYS = 3
 
 
 def load_history() -> dict:
@@ -46,6 +51,19 @@ def save_history(hist: dict, stories: list[dict]) -> None:
         hist[s["url"]] = now
     HISTORY.parent.mkdir(exist_ok=True)
     HISTORY.write_text(json.dumps(hist, indent=1, sort_keys=True))
+
+
+def load_covered() -> list[dict]:
+    if not COVERED.exists():
+        return []
+    cutoff = time.time() - COVERED_DAYS * 86400
+    return [c for c in json.loads(COVERED.read_text()) if c["ts"] >= cutoff]
+
+
+def save_covered(covered: list[dict], stories: list[dict]) -> None:
+    now = time.time()
+    covered = covered + [{"headline": s["headline"], "ts": now} for s in stories]
+    COVERED.write_text(json.dumps(covered, indent=1, ensure_ascii=False))
 
 
 def run_breaking(args) -> None:
@@ -68,7 +86,11 @@ def run_breaking(args) -> None:
 def run(args) -> None:
     if args.breaking:
         return run_breaking(args)
-    out_dir = ROOT / "output" / news_date().strftime("%Y-%m-%d")
+    day = news_date().strftime("%Y-%m-%d")
+    out_dir = ROOT / "output" / day
+    if not args.sample and not args.force and LAST_EDITION.exists() and LAST_EDITION.read_text().strip() == day:
+        print(f"[skip] the {day} edition was already sent; use --force to send it again")
+        return
 
     if args.sample:
         data = json.loads((ROOT / "samples" / "sample_stories.json").read_text())
@@ -77,8 +99,9 @@ def run(args) -> None:
         from src.curate import curate
         from src.fetch_news import fetch_all
         hist = load_history()
+        covered = load_covered()
         items = fetch_all(set(hist))
-        data = curate(items)
+        data = curate(items, recent=[c["headline"] for c in covered])
 
     paths = render_slides(data, out_dir)
     caption = write_caption(data, out_dir)
@@ -86,10 +109,13 @@ def run(args) -> None:
 
     if hist is not None:
         save_history(hist, data["stories"])
+        save_covered(covered, data["stories"])
 
     can_send = os.environ.get("TELEGRAM_BOT_TOKEN") and os.environ.get("TELEGRAM_CHAT_ID")
     if can_send and not args.no_send:
         send_slides(paths, caption)
+        if not args.sample:
+            LAST_EDITION.write_text(day + "\n")
     else:
         print(f"[done] files are in {out_dir} (Telegram not sent)")
 
@@ -98,6 +124,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--sample", action="store_true", help="render sample data, no APIs")
     ap.add_argument("--no-send", action="store_true", help="skip Telegram")
+    ap.add_argument("--force", action="store_true", help="send today's edition even if it was already sent")
     ap.add_argument("--breaking", metavar="TOPIC", help="make a short breaking-news post on one topic")
     ap.add_argument("--notes", default="", help="your angle or facts for the breaking post")
     ap.add_argument("--slides", type=int, default=2, choices=[1, 2, 3], help="story slides after the cover")
