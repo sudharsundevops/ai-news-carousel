@@ -52,7 +52,7 @@ def render_slides(data: dict, out_dir: Path, breaking: bool = False) -> list[Pat
 
 
 def write_caption(data: dict, out_dir: Path) -> Path:
-    lines = [data.get("caption_hook", "Yesterday in AI, in one swipe."), ""]
+    lines = [data.get("caption_hook", "The last 24 hours in AI, in one swipe."), ""]
     for i, s in enumerate(data["stories"], 1):
         lines.append(f"{i}. {s['headline']}")
     lines += ["", "Sources:"]
