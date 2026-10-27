@@ -23,7 +23,9 @@ def render_slides(data: dict, out_dir: Path) -> list[Path]:
     stories = data["stories"]
     n = len(stories)
     d = news_date()
-    common = {"handle": config.HANDLE, "count": n,
+    today = datetime.now(IST).date()
+    edition = max(1, (today - datetime.fromisoformat(config.LAUNCH_DATE).date()).days + 1)
+    common = {"handle": config.HANDLE, "count": n, "edition": edition,
               "date_label": f"{d.strftime('%A')}, {d.day} {d.strftime('%B %Y')}"}
 
     pages = [tpl.render(kind="cover", hook=data.get("cover_hook", stories[0]["headline"]), **common)]

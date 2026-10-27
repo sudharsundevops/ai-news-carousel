@@ -2,7 +2,10 @@
 import os
 
 # Your Instagram handle, shown on every slide.
-HANDLE = os.getenv("IG_HANDLE") or "@yourhandle"
+HANDLE = os.getenv("IG_HANDLE") or "@aichronicle.in"
+
+# Day of edition No. 1. Each day after adds one to the edition number on the cover.
+LAUNCH_DATE = "2026-10-28"
 
 # How many stories per carousel. Instagram's app allows up to 20 slides,
 # so cover + 10 stories + closing slide (12 total) is fine when you post manually.
