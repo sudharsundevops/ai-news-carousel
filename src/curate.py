@@ -62,7 +62,7 @@ BREAKING_FORMAT = """Return JSON only, in exactly this shape:
 """
 
 
-def _call(model: str, prompt: str, key: str, system: str = SYSTEM) -> dict:
+def _call(model: str, prompt: str, key: str, system: str = SYSTEM, timeout: int = 120) -> dict:
     body = {
         "systemInstruction": {"parts": [{"text": system}]},
         "contents": [{"role": "user", "parts": [{"text": prompt}]}],
@@ -70,7 +70,7 @@ def _call(model: str, prompt: str, key: str, system: str = SYSTEM) -> dict:
     }
     delay = 15
     for attempt in range(1, 5):
-        r = requests.post(API.format(model=model), json=body, timeout=120,
+        r = requests.post(API.format(model=model), json=body, timeout=timeout,
                           headers={"x-goog-api-key": key})
         if r.status_code == 200:
             text = r.json()["candidates"][0]["content"]["parts"][0]["text"]
@@ -154,7 +154,7 @@ This is a breaking-news post about a single topic, not the daily roundup.
 
     for model in (config.GEMINI_MODEL, config.GEMINI_FALLBACK_MODEL):
         try:
-            return _validate(_call(model, prompt, key, system), items, slides, minimum=1, allow_repeat=True)
+            return _validate(_call(model, prompt, key, system, timeout=45), items, slides, minimum=1, allow_repeat=True)
         except Exception as e:  # noqa: BLE001
             print(f"[gemini] {model}: {e}")
             last = e
