@@ -1,29 +1,5 @@
 [
  {
-  "headline": "Anthropic officially files for its public debut",
-  "ts": 1793126569.453664
- },
- {
-  "headline": "OpenAI introduces GPT-6.1 Terra for computer use",
-  "ts": 1793126569.453664
- },
- {
-  "headline": "Fanatics integrates OpenAI for game-day shopping",
-  "ts": 1793126569.453664
- },
- {
-  "headline": "CodeRabbit adopts GPT-6.1 Sol for security",
-  "ts": 1793126569.453664
- },
- {
-  "headline": "The RealReal updates bot defense against AI shoppers",
-  "ts": 1793126569.453664
- },
- {
-  "headline": "SpaceX secures massive GPU financing deal",
-  "ts": 1793126569.453664
- },
- {
   "headline": "Apple adds AI assistant to Pages, Keynote, and Numbers",
   "ts": 1793153073.650054
  },
@@ -94,5 +70,45 @@
  {
   "headline": "Amazon updates Alexa for better list and subscription management",
   "ts": 1793326082.6171737
+ },
+ {
+  "headline": "Apple intelligence launches in China with iOS beta",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Tech giants adopt unified AI training opt-out standard",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Google runs first AI model from space satellite",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Rivian expands Volkswagen joint venture to include AI assistant",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Zest introduces group dining concierge agent",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Anthropic vs code extension backdoored on cursor marketplace",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Starbucks explores personalized AI drive-thru menus",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Pope Leo calls for international disarmament of AI weapons",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Startup aims to mass-produce prefabricated AI data centers",
+  "ts": 1793412294.986585
+ },
+ {
+  "headline": "Reddit shifts strategy toward logged-in users amid search changes",
+  "ts": 1793412294.986585
  }
 ]
