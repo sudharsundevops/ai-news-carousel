@@ -1,33 +1,5 @@
 [
  {
-  "headline": "Google Gemini now lets you edit files directly in chat",
-  "ts": 1793326082.6171737
- },
- {
-  "headline": "The New York Times tests AI recipe modifications in cooking app",
-  "ts": 1793326082.6171737
- },
- {
-  "headline": "AI app Wabi secures new funding at $1.25 billion valuation",
-  "ts": 1793326082.6171737
- },
- {
-  "headline": "Meta quietly launches Style Sketch fashion app",
-  "ts": 1793326082.6171737
- },
- {
-  "headline": "Deepgram acquires voice infrastructure maker Daily",
-  "ts": 1793326082.6171737
- },
- {
-  "headline": "Granola adds dictation features to rival Wispr",
-  "ts": 1793326082.6171737
- },
- {
-  "headline": "Amazon updates Alexa for better list and subscription management",
-  "ts": 1793326082.6171737
- },
- {
   "headline": "Apple intelligence launches in China with iOS beta",
   "ts": 1793412294.986585
  },
@@ -106,5 +78,21 @@
  {
   "headline": "Apple defends deliberate approach to AI product launches",
   "ts": 1793499061.662964
+ },
+ {
+  "headline": "Anthropic blocks Claude from reverse-engineering video games",
+  "ts": 1793585651.17128
+ },
+ {
+  "headline": "Minecraft AI agent swarms drown in bureaucracy",
+  "ts": 1793585651.17128
+ },
+ {
+  "headline": "AI delivers zero financial payoff to most companies",
+  "ts": 1793585651.17128
+ },
+ {
+  "headline": "OpenAI considers rebranding data centers as compute campuses",
+  "ts": 1793585651.17128
  }
 ]
