@@ -17,7 +17,7 @@ jobs:
   build:
     # Pinned: ubuntu-latest is Ubuntu 26.04, which Playwright 1.56 can't install Chromium on.
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 30   # room for ~10 min of Telegram retries
     steps:
       - uses: actions/checkout@v4
 
@@ -56,4 +56,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/history.json data/last_edition.txt data/covered.json
           git diff --cached --quiet || git commit -m "history: $(date -u +%F)"
+          # main may have moved during the run (a manual push); rebase so the push isn't rejected.
+          git pull --rebase
           git push
