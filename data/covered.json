@@ -1,61 +1,5 @@
 [
  {
-  "headline": "OpenAI reportedly lowers funding target for new round",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Sam Altman wants RAM redirected to data centers",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Intel stock plunge hits government stake by billions",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Judge advances clean air lawsuit against xAI",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Anthropic could face junk credit rating post-IPO",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Nvidia considers cosigning data center loan for Nscale",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Privacy-first AI assistant Ollie announces sudden closure",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Boom pivots resources from supersonic flight to AI",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Dartmouth provost ousted over undisclosed AI usage",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Apple defends deliberate approach to AI product launches",
-  "ts": 1793499061.662964
- },
- {
-  "headline": "Anthropic blocks Claude from reverse-engineering video games",
-  "ts": 1793585651.17128
- },
- {
-  "headline": "Minecraft AI agent swarms drown in bureaucracy",
-  "ts": 1793585651.17128
- },
- {
-  "headline": "AI delivers zero financial payoff to most companies",
-  "ts": 1793585651.17128
- },
- {
-  "headline": "OpenAI considers rebranding data centers as compute campuses",
-  "ts": 1793585651.17128
- },
- {
   "headline": "Google brings Dreambeans AI stories to India",
   "ts": 1793686306.8196805
  },
@@ -118,5 +62,45 @@
  {
   "headline": "AI inference startup Fal doubles valuation to sixteen billion",
   "ts": 1793758175.4910817
+ },
+ {
+  "headline": "ChatGPT now supports native animated GIF creation",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Meta acquires AI coding startup Conductor",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "OpenAI acquires Pierre Computer Company",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Google Gemini integrates with AT&T smart home security",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Nothing teases mysterious AI-first device for next month",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "OpenAI pipeline patches Linux kernel vulnerabilities",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Qualcomm pivots toward AI data centers as phone sales drop",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Data center developers face massive headwinds after midterms",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Uber reveals almost zero rides booked by AI agents",
+  "ts": 1793845317.16993
+ },
+ {
+  "headline": "Data centers turn to jet engines amid power grid delays",
+  "ts": 1793845317.16993
  }
 ]
