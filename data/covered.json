@@ -1,37 +1,5 @@
 [
  {
-  "headline": "Google turns off Search for schools rejecting AI tools",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "Apple gives Siri access to third-party apps",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "Netflix adds AI Discover tab for recommendations",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "Apple Watch adds audio intelligence and recaps",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "Apple restricts dating apps and AI companions to adults",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "Nexus Mods makes AI content disclosures mandatory",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "Anthropic works on system to prove AI model identity",
-  "ts": 1793758175.4910817
- },
- {
-  "headline": "AI inference startup Fal doubles valuation to sixteen billion",
-  "ts": 1793758175.4910817
- },
- {
   "headline": "ChatGPT now supports native animated GIF creation",
   "ts": 1793845317.16993
  },
@@ -142,5 +110,25 @@
  {
   "headline": "Google acquires Crusoe Wyoming data center project",
   "ts": 1794017238.3079653
+ },
+ {
+  "headline": "OpenAI reaches a 1.25 trillion dollar valuation in new funding",
+  "ts": 1794104095.0962687
+ },
+ {
+  "headline": "Anthropic uses AI to accelerate its own development",
+  "ts": 1794104095.0962687
+ },
+ {
+  "headline": "Chinese intelligence allegedly recruited tech executive to spy on Nvidia CEO",
+  "ts": 1794104095.0962687
+ },
+ {
+  "headline": "US accused of clearing Nvidia chip sales to empty offices",
+  "ts": 1794104095.0962687
+ },
+ {
+  "headline": "Claude Code feature allegedly exposes passwords on public GitHub repositories",
+  "ts": 1794104095.0962687
  }
 ]
