@@ -2,12 +2,9 @@
  "https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again": 1794104095.09598,
  "https://arstechnica.com/apple/2026/11/apples-roaming-home-robot-may-do-facetime-switch-lights-on-and-yell-at-your-cat/": 1793686306.8192863,
  "https://arstechnica.com/tech-policy/2026/11/does-meta-think-we-cant-read-meta-abandons-sketchy-commercial-terms-update/": 1794017238.3075624,
- "https://mashable.com/tech/anthropic-takes-steps-to-block-video-game-cloning-and-reverse-engineering": 1793585651.170949,
  "https://openai.com/index/a-thousand-fewer-paths-to-root": 1793845317.1695817,
  "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science": 1794017238.3075624,
  "https://openai.com/index/openai-to-acquire-pierre": 1793845317.1695817,
- "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/": 1793585651.170949,
- "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/": 1793585651.170949,
  "https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/": 1793686306.8192863,
  "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/": 1793686306.8192863,
  "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/": 1793686306.8192863,
@@ -40,6 +37,9 @@
  "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development": 1794104095.09598,
  "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation": 1794104095.09598,
  "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government": 1794104095.09598,
+ "https://www.theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit": 1794190884.6810257,
+ "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic": 1794190884.6810257,
+ "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy": 1794190884.6810257,
  "https://www.theverge.com/entertainment/1026282/grimes-ai-movie": 1793931742.6656609,
  "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures": 1793758175.4907546,
  "https://www.theverge.com/policy/1026365/data-centers-midterms-results": 1793845317.1695817,
@@ -50,6 +50,5 @@
  "https://www.theverge.com/tech/1026787/att-gemini-for-home-connected-life-security-system": 1793845317.1695817,
  "https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar": 1793931742.6656609,
  "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings": 1793931742.6656609,
- "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces": 1794017238.3075624,
- "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-swarms-unleashed-in-minecraft-to-build-a-thriving-civilization-50-agent-teams-fail-after-falling-into-paralyzing-bureaucracy": 1793585651.170949
+ "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces": 1794017238.3075624
 }

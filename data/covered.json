@@ -1,45 +1,5 @@
 [
  {
-  "headline": "ChatGPT now supports native animated GIF creation",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Meta acquires AI coding startup Conductor",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "OpenAI acquires Pierre Computer Company",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Google Gemini integrates with AT&T smart home security",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Nothing teases mysterious AI-first device for next month",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "OpenAI pipeline patches Linux kernel vulnerabilities",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Qualcomm pivots toward AI data centers as phone sales drop",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Data center developers face massive headwinds after midterms",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Uber reveals almost zero rides booked by AI agents",
-  "ts": 1793845317.16993
- },
- {
-  "headline": "Data centers turn to jet engines amid power grid delays",
-  "ts": 1793845317.16993
- },
- {
   "headline": "Airbnb announces new AI travel planning agent",
   "ts": 1793931742.6660702
  },
@@ -130,5 +90,17 @@
  {
   "headline": "Claude Code feature allegedly exposes passwords on public GitHub repositories",
   "ts": 1794104095.0962687
+ },
+ {
+  "headline": "Nvidia probes CEO Jensen Huang over Chinese spy links",
+  "ts": 1794190884.6814544
+ },
+ {
+  "headline": "Elvis and Eminem rights holders sue AI music generator Suno",
+  "ts": 1794190884.6814544
+ },
+ {
+  "headline": "Apple pushes teams to accelerate agentic Siri roadmap",
+  "ts": 1794190884.6814544
  }
 ]
