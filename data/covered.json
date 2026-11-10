@@ -1,77 +1,5 @@
 [
  {
-  "headline": "Airbnb announces new AI travel planning agent",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Claude adds new personal finance management tool",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "OpenAI unveils GPT-6 Cyber security model",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Perplexity launches always-on workspace Teammates",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "ElevenLabs adds direct SoundCloud music publishing",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Agility Robotics makes historic Nasdaq stock debut",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Dropbox acquires Tigris Data for infrastructure",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Grimes to star in theatrical AI movie",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Meta rolls out real-time voice mode",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "OpenAI steps back from data center NDAs",
-  "ts": 1793931742.6660702
- },
- {
-  "headline": "Amazon adds texting features to Alexa for shopping",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "Meta Muse introduces custom spaces for app-like experiences",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "OpenAI releases benchmark for wet-lab science agents",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "Palo Alto Networks eyes security startup Clutch",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "Security researchers find exposed Artex AI hacking tools",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "Meta drops controversial commercial terms training update",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "Underdog reveals compact speech and music model",
-  "ts": 1794017238.3079653
- },
- {
-  "headline": "Google acquires Crusoe Wyoming data center project",
-  "ts": 1794017238.3079653
- },
- {
   "headline": "OpenAI reaches a 1.25 trillion dollar valuation in new funding",
   "ts": 1794104095.0962687
  },
@@ -102,5 +30,45 @@
  {
   "headline": "Apple pushes teams to accelerate agentic Siri roadmap",
   "ts": 1794190884.6814544
+ },
+ {
+  "headline": "Anthropic launches Claude Fable and Mythos 5.2",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Meta releases lightweight Muse Ember model",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Disney and Adobe partner for generative AI tools",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Instagram launches AI-powered Effect Builder",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "ChatGPT Enterprise comes to AWS Marketplace",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Automattic debuts Spacefast for vibe-coding apps",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Medium releases TK writing app with AI",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Anthropic prepares for upcoming IPO valuation",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "Nvidia invests in Korean AI startups",
+  "ts": 1794276955.124731
+ },
+ {
+  "headline": "OpenAI unveils Control Room safety infrastructure",
+  "ts": 1794276955.124731
  }
 ]
