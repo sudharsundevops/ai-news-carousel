@@ -1,25 +1,5 @@
 [
  {
-  "headline": "OpenAI reaches a 1.25 trillion dollar valuation in new funding",
-  "ts": 1794104095.0962687
- },
- {
-  "headline": "Anthropic uses AI to accelerate its own development",
-  "ts": 1794104095.0962687
- },
- {
-  "headline": "Chinese intelligence allegedly recruited tech executive to spy on Nvidia CEO",
-  "ts": 1794104095.0962687
- },
- {
-  "headline": "US accused of clearing Nvidia chip sales to empty offices",
-  "ts": 1794104095.0962687
- },
- {
-  "headline": "Claude Code feature allegedly exposes passwords on public GitHub repositories",
-  "ts": 1794104095.0962687
- },
- {
   "headline": "Nvidia probes CEO Jensen Huang over Chinese spy links",
   "ts": 1794190884.6814544
  },
@@ -102,5 +82,37 @@
  {
   "headline": "Ring schedules flying home security drone for January",
   "ts": 1794363189.0459714
+ },
+ {
+  "headline": "OpenAI quarterly revenue crosses $10 billion for first time",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "British chipmaker Fractile secures $720 million round",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "TSMC invests $1 billion in Anthropic and OpenAI",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "Google DeepMind unveils AlphaGenome 2 for cellular biology",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "Google launches Tabletop for custom collaboration apps",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "United Airlines blocks personal AI agents from booking flights",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "OpenAI acquires travel startup Odessia",
+  "ts": 1794450062.1736007
+ },
+ {
+  "headline": "CoreWeave changes contract terms to fund AI growth",
+  "ts": 1794450062.1736007
  }
 ]
