@@ -1,17 +1,5 @@
 [
  {
-  "headline": "Nvidia probes CEO Jensen Huang over Chinese spy links",
-  "ts": 1794190884.6814544
- },
- {
-  "headline": "Elvis and Eminem rights holders sue AI music generator Suno",
-  "ts": 1794190884.6814544
- },
- {
-  "headline": "Apple pushes teams to accelerate agentic Siri roadmap",
-  "ts": 1794190884.6814544
- },
- {
   "headline": "Anthropic launches Claude Fable and Mythos 5.2",
   "ts": 1794276955.124731
  },
@@ -114,5 +102,29 @@
  {
   "headline": "CoreWeave changes contract terms to fund AI growth",
   "ts": 1794450062.1736007
+ },
+ {
+  "headline": "Jensen Huang resigns as Nvidia CEO following board investigation",
+  "ts": 1794536281.030322
+ },
+ {
+  "headline": "Google launches Gemini 4 Hydrogen for advanced query handling",
+  "ts": 1794536281.030322
+ },
+ {
+  "headline": "Muse AI gains paid feature to place outbound business calls",
+  "ts": 1794536281.030322
+ },
+ {
+  "headline": "Study finds AI chatbots directing shoppers to fake retail websites",
+  "ts": 1794536281.030322
+ },
+ {
+  "headline": "Cyberattack on Fireworks AI exposes Notion customer chat transcripts",
+  "ts": 1794536281.030322
+ },
+ {
+  "headline": "Google-powered Gemini smartglasses debut starting at $395",
+  "ts": 1794536281.030322
  }
 ]
