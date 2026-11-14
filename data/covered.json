@@ -1,45 +1,5 @@
 [
  {
-  "headline": "Anthropic launches Claude Fable and Mythos 5.2",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Meta releases lightweight Muse Ember model",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Disney and Adobe partner for generative AI tools",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Instagram launches AI-powered Effect Builder",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "ChatGPT Enterprise comes to AWS Marketplace",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Automattic debuts Spacefast for vibe-coding apps",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Medium releases TK writing app with AI",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Anthropic prepares for upcoming IPO valuation",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "Nvidia invests in Korean AI startups",
-  "ts": 1794276955.124731
- },
- {
-  "headline": "OpenAI unveils Control Room safety infrastructure",
-  "ts": 1794276955.124731
- },
- {
   "headline": "Google launches Gemini 4 Carbon with agent swarms",
   "ts": 1794363189.0459714
  },
@@ -126,5 +86,37 @@
  {
   "headline": "Google-powered Gemini smartglasses debut starting at $395",
   "ts": 1794536281.030322
+ },
+ {
+  "headline": "OpenAI introduces ChatGPT Wallet for autonomous shopping agents",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "AI agent startup LangChain reaches 3 billion valuation",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "ElevenLabs drops new team meeting and dictation app",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "Edge0-145B brings frontier AI capabilities to local computers",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "AI successfully unlocks Gödel's lost mathematical notebooks",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "Amazon plans massive product vault to index internet shopping",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "FAA expands AI tools to manage US airspace congestion",
+  "ts": 1794622427.4079115
+ },
+ {
+  "headline": "OpenAI disbands robotics team as general models take over",
+  "ts": 1794622427.4079115
  }
 ]
