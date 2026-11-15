@@ -153,7 +153,7 @@ def curate(items: list[dict], top_n: int = config.TOP_N, recent: list[str] | Non
     prompt = (f"Pick the top {top_n} stories from these candidates.\n\n" + skip
               + "\n".join(lines) + "\n\n" + FORMAT)
 
-    for model in (config.GEMINI_MODEL, config.GEMINI_FALLBACK_MODEL):
+    for model in config.GEMINI_MODELS:
         try:
             return _validate(_call(model, prompt, key), items, top_n)
         except Exception as e:  # noqa: BLE001
@@ -181,7 +181,7 @@ This is a breaking-news post about a single topic, not the daily roundup.
               f"Write exactly {slides} slides about this topic from these candidates.\n\n"
               + "\n".join(lines) + "\n\n" + BREAKING_FORMAT)
 
-    for model in (config.GEMINI_MODEL, config.GEMINI_FALLBACK_MODEL):
+    for model in config.GEMINI_MODELS:
         try:
             return _validate(_call(model, prompt, key, system, timeout=45), items, slides, minimum=1, allow_repeat=True)
         except Exception as e:  # noqa: BLE001

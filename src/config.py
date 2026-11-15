@@ -22,8 +22,11 @@ AUDIENCE = (
 )
 
 # Gemini model. Free-tier models change over time: check AI Studio if a call fails.
-GEMINI_MODEL = os.getenv("GEMINI_MODEL") or "gemini-flash-latest"
+GEMINI_MODEL = os.getenv("GEMINI_MODEL") or "gemini-3.6-flash"
 GEMINI_FALLBACK_MODEL = os.getenv("GEMINI_FALLBACK_MODEL") or "gemini-flash-lite-latest"
+# Tried in order. The pinned model goes first because "gemini-flash-latest" can point at a
+# model that hangs on the free tier; the "-latest" aliases take over when the pinned one is retired.
+GEMINI_MODELS = list(dict.fromkeys([GEMINI_MODEL, "gemini-flash-latest", GEMINI_FALLBACK_MODEL]))
 
 # RSS feeds. A feed that fails or moves is skipped and logged, never fatal.
 FEEDS = {
