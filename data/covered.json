@@ -1,29 +1,5 @@
 [
  {
-  "headline": "Jensen Huang resigns as Nvidia CEO following board investigation",
-  "ts": 1794536281.030322
- },
- {
-  "headline": "Google launches Gemini 4 Hydrogen for advanced query handling",
-  "ts": 1794536281.030322
- },
- {
-  "headline": "Muse AI gains paid feature to place outbound business calls",
-  "ts": 1794536281.030322
- },
- {
-  "headline": "Study finds AI chatbots directing shoppers to fake retail websites",
-  "ts": 1794536281.030322
- },
- {
-  "headline": "Cyberattack on Fireworks AI exposes Notion customer chat transcripts",
-  "ts": 1794536281.030322
- },
- {
-  "headline": "Google-powered Gemini smartglasses debut starting at $395",
-  "ts": 1794536281.030322
- },
- {
   "headline": "OpenAI introduces ChatGPT Wallet for autonomous shopping agents",
   "ts": 1794622427.4079115
  },
@@ -78,5 +54,29 @@
  {
   "headline": "New tracker documents shuttered AI projects and startups",
   "ts": 1794758177.3117654
+ },
+ {
+  "headline": "Indian chip startup Bharat Semi raises $24M",
+  "ts": 1794795994.249929
+ },
+ {
+  "headline": "US Congress pushes tighter rules on AI chip exports",
+  "ts": 1794795994.249929
+ },
+ {
+  "headline": "Apple launches study to test conversational health AI",
+  "ts": 1794795994.249929
+ },
+ {
+  "headline": "OpenAI model helps construct complex physics proof",
+  "ts": 1794795994.249929
+ },
+ {
+  "headline": "OpenAI launches dedicated scientific research blog",
+  "ts": 1794795994.249929
+ },
+ {
+  "headline": "Nvidia showcases physical AI at Seoul conference",
+  "ts": 1794795994.249929
  }
 ]
