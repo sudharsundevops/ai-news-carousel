@@ -1,37 +1,5 @@
 [
  {
-  "headline": "OpenAI introduces ChatGPT Wallet for autonomous shopping agents",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "AI agent startup LangChain reaches 3 billion valuation",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "ElevenLabs drops new team meeting and dictation app",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "Edge0-145B brings frontier AI capabilities to local computers",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "AI successfully unlocks Gödel's lost mathematical notebooks",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "Amazon plans massive product vault to index internet shopping",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "FAA expands AI tools to manage US airspace congestion",
-  "ts": 1794622427.4079115
- },
- {
-  "headline": "OpenAI disbands robotics team as general models take over",
-  "ts": 1794622427.4079115
- },
- {
   "headline": "Elon Musk signs petition to reinstate Jensen Huang",
   "ts": 1794758177.3117654
  },
@@ -78,5 +46,45 @@
  {
   "headline": "Nvidia showcases physical AI at Seoul conference",
   "ts": 1794795994.249929
+ },
+ {
+  "headline": "California sues OpenAI over rogue AI agents",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "Apple tests daily usage limits for advanced Siri",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "OpenAI offers free access to 200,000 researchers",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "OpenAI builds tool to detect child abuse deepfakes",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "FBI warns of open-source AI hacking tool",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "Google Maps adds AI travel itinerary planner",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "Nvidia board rules out bringing back Jensen Huang",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "Cybersecurity AI startup Corma hits $1B valuation",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "OpenAI embeds safety evaluators to test model subversion",
+  "ts": 1794882205.0405014
+ },
+ {
+  "headline": "Audible adds AI previews for audiobook discovery",
+  "ts": 1794882205.0405014
  }
 ]
