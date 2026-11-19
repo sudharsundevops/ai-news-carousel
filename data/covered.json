@@ -1,29 +1,5 @@
 [
  {
-  "headline": "Elon Musk signs petition to reinstate Jensen Huang",
-  "ts": 1794758177.3117654
- },
- {
-  "headline": "Nvidia accused of circular financing to boost GPU prices",
-  "ts": 1794758177.3117654
- },
- {
-  "headline": "GLM-5.3 reaches 600 tokens per second with vLLM",
-  "ts": 1794758177.3117654
- },
- {
-  "headline": "Asian nations secure chip supply after Nvidia leadership exit",
-  "ts": 1794758177.3117654
- },
- {
-  "headline": "Nvidia security chief departed prior to CEO resignation",
-  "ts": 1794758177.3117654
- },
- {
-  "headline": "New tracker documents shuttered AI projects and startups",
-  "ts": 1794758177.3117654
- },
- {
   "headline": "Indian chip startup Bharat Semi raises $24M",
   "ts": 1794795994.249929
  },
@@ -126,5 +102,37 @@
  {
   "headline": "Voyage Labs launches AI travel assistant",
   "ts": 1794969173.7443366
+ },
+ {
+  "headline": "Microsoft integrates Office suite directly into Copilot",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "US school districts consider dropping Google Search",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Snapchat allows developers to build AR Lenses using AI",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Suno expands into AI video generation for music",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Google adds incognito mode to AI features in Search",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Nvidia RTX Spark compact desktops launch for local AI",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Nvidia halts advanced AI chip shipments to China",
+  "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Microsoft CEO explains voluntary employee buyouts",
+  "ts": 1795055193.2920437
  }
 ]
