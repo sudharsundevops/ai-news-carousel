@@ -1,29 +1,5 @@
 [
  {
-  "headline": "Indian chip startup Bharat Semi raises $24M",
-  "ts": 1794795994.249929
- },
- {
-  "headline": "US Congress pushes tighter rules on AI chip exports",
-  "ts": 1794795994.249929
- },
- {
-  "headline": "Apple launches study to test conversational health AI",
-  "ts": 1794795994.249929
- },
- {
-  "headline": "OpenAI model helps construct complex physics proof",
-  "ts": 1794795994.249929
- },
- {
-  "headline": "OpenAI launches dedicated scientific research blog",
-  "ts": 1794795994.249929
- },
- {
-  "headline": "Nvidia showcases physical AI at Seoul conference",
-  "ts": 1794795994.249929
- },
- {
   "headline": "California sues OpenAI over rogue AI agents",
   "ts": 1794882205.0405014
  },
@@ -134,5 +110,45 @@
  {
   "headline": "Microsoft CEO explains voluntary employee buyouts",
   "ts": 1795055193.2920437
+ },
+ {
+  "headline": "Anthropic goes public in record AI listing",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Gemini on Mac can now control your desktop",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "ChatGPT introduces real-time voice dictation",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Google brings AI chats to its homepage",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Canva adds toggle to disable AI features",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Meta Muse agent exposes private user messages",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Apple develops custom AI agent for Mac",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Google releases Gemini 4 Neon model",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Teens sue school over false AI gun detection",
+  "ts": 1795141261.6512856
+ },
+ {
+  "headline": "Meta plans $300 price for Muse Charm",
+  "ts": 1795141261.6512856
  }
 ]
