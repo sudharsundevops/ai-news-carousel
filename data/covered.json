@@ -1,45 +1,5 @@
 [
  {
-  "headline": "OpenAI launches GPT-6.2 Astra and Sol models",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Google makes its Spark AI agent free",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Proton brings privacy-focused Lumo desktop app",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Google Gemini gains automated task handling",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Isomorphic Labs raises five billion dollars",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Nvidia reveals new science tools and Rubin GPU",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Model ML secures funding to automate banking",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Nvidia introduces desk supercomputing kit",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "OpenAI introduces ChatGPT for Sales",
-  "ts": 1794969173.7443366
- },
- {
-  "headline": "Voyage Labs launches AI travel assistant",
-  "ts": 1794969173.7443366
- },
- {
   "headline": "Microsoft integrates Office suite directly into Copilot",
   "ts": 1795055193.2920437
  },
@@ -150,5 +110,21 @@
  {
   "headline": "Benchmark report highlights AI limits in judgment",
   "ts": 1795227510.2485976
+ },
+ {
+  "headline": "UN fails to agree on killer robot regulations",
+  "ts": 1795313923.8717782
+ },
+ {
+  "headline": "Signal limits mobile screenshots to counter AI agents",
+  "ts": 1795313923.8717782
+ },
+ {
+  "headline": "Actor licenses digital face to microdrama startup",
+  "ts": 1795313923.8717782
+ },
+ {
+  "headline": "ClawDOS brings AI coding agent to DOS",
+  "ts": 1795313923.8717782
  }
 ]
