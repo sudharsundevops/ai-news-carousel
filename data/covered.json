@@ -1,77 +1,5 @@
 [
  {
-  "headline": "Microsoft integrates Office suite directly into Copilot",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "US school districts consider dropping Google Search",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Snapchat allows developers to build AR Lenses using AI",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Suno expands into AI video generation for music",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Google adds incognito mode to AI features in Search",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Nvidia RTX Spark compact desktops launch for local AI",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Nvidia halts advanced AI chip shipments to China",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Microsoft CEO explains voluntary employee buyouts",
-  "ts": 1795055193.2920437
- },
- {
-  "headline": "Anthropic goes public in record AI listing",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Gemini on Mac can now control your desktop",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "ChatGPT introduces real-time voice dictation",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Google brings AI chats to its homepage",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Canva adds toggle to disable AI features",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Meta Muse agent exposes private user messages",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Apple develops custom AI agent for Mac",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Google releases Gemini 4 Neon model",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Teens sue school over false AI gun detection",
-  "ts": 1795141261.6512856
- },
- {
-  "headline": "Meta plans $300 price for Muse Charm",
-  "ts": 1795141261.6512856
- },
- {
   "headline": "Signal blocks AI agents from reading screens",
   "ts": 1795227510.2485976
  },
@@ -126,5 +54,37 @@
  {
   "headline": "ClawDOS brings AI coding agent to DOS",
   "ts": 1795313923.8717782
+ },
+ {
+  "headline": "Game developers remove AI music after Steam review bombing",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "Anthropic secures major backing ahead of planned IPO",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "Anthropic energy projection relies heavily on fossil fuels",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "OpenAI explains perplexity metric for AI evaluation",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "OpenAI chief scientist proposes measuring AI speed limits",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "Pandex connects European AI law to MCP",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "Developer guide details local AI setup with Qwen",
+  "ts": 1795400584.8211107
+ },
+ {
+  "headline": "Developer builds game where players act as AI subagent",
+  "ts": 1795400584.8211107
  }
 ]
