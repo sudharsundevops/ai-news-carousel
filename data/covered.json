@@ -1,45 +1,5 @@
 [
  {
-  "headline": "Signal blocks AI agents from reading screens",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "Jensen Huang resigns as Nvidia CEO",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "Mathematician uses Claude to solve Riemann hypothesis",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "AI discovers and verifies new CPU architecture",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "Meta reconsiders 2030 climate goals over AI emissions",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "US threatens tax on offshore AI data centers",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "Recent mass tech outages linked to AI agents",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "Test reveals massive privacy leaks in AI supply chain",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "OpenAI introduces benchmark for AI drug discovery",
-  "ts": 1795227510.2485976
- },
- {
-  "headline": "Benchmark report highlights AI limits in judgment",
-  "ts": 1795227510.2485976
- },
- {
   "headline": "UN fails to agree on killer robot regulations",
   "ts": 1795313923.8717782
  },
@@ -86,5 +46,45 @@
  {
   "headline": "Developer builds game where players act as AI subagent",
   "ts": 1795400584.8211107
+ },
+ {
+  "headline": "Jensen Huang reinstated as Nvidia chief executive",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Anthropic launches Claude Ship to automate code reviews",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Amazon acquires AI startup Decart for $7.5B",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Google Search AI Mode connects to user personal data",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Nothing reveals Ear Note earbuds with AI recording",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "US state attorneys general sue SpaceX over Grok",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "OpenAI and Cisco release open source Shirudo runtime",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Customer experience startup Sierra reaches $30B valuation",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Google DeepMind accelerates quantum algorithms using AI",
+  "ts": 1795487087.026255
+ },
+ {
+  "headline": "Supertake raises $20M for AI portfolio builder",
+  "ts": 1795487087.026255
  }
 ]
