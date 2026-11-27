@@ -1,45 +1,5 @@
 [
  {
-  "headline": "Jensen Huang reinstated as Nvidia chief executive",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Anthropic launches Claude Ship to automate code reviews",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Amazon acquires AI startup Decart for $7.5B",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Google Search AI Mode connects to user personal data",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Nothing reveals Ear Note earbuds with AI recording",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "US state attorneys general sue SpaceX over Grok",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "OpenAI and Cisco release open source Shirudo runtime",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Customer experience startup Sierra reaches $30B valuation",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Google DeepMind accelerates quantum algorithms using AI",
-  "ts": 1795487087.026255
- },
- {
-  "headline": "Supertake raises $20M for AI portfolio builder",
-  "ts": 1795487087.026255
- },
- {
   "headline": "OpenAI reveals GPT-6 protein design capabilities",
   "ts": 1795573582.5924652
  },
@@ -110,5 +70,21 @@
  {
   "headline": "Patent rejected for Google custom AI video feeds",
   "ts": 1795659929.9683876
+ },
+ {
+  "headline": "Nvidia pauses server shipments to Southeast Asia",
+  "ts": 1795746353.4536335
+ },
+ {
+  "headline": "Google requires AI agents to use its MCP servers",
+  "ts": 1795746353.4536335
+ },
+ {
+  "headline": "OpenAI reduces usage caps for GPT-6.2",
+  "ts": 1795746353.4536335
+ },
+ {
+  "headline": "Developers launch AMD-specific fork of llama.cpp",
+  "ts": 1795746353.4536335
  }
 ]
